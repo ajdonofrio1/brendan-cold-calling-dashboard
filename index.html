@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taxter Advisory Team — Cold Calling Scripts & Training</title>
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0f2540;
+    --orange: #e87d2a;
+    --orange-light: #f5a623;
+    --blue-mid: #2c5f8a;
+    --blue-light: #4a8fc1;
+    --gray-bg: #f4f6f9;
+    --gray-card: #ffffff;
+    --gray-border: #dde3ec;
+    --text-dark: #1a2332;
+    --text-mid: #3d5068;
+    --text-light: #7a8fa6;
+    --green: #27a865;
+    --red: #d94f4f;
+    --yellow: #f0b429;
+    --purple: #7c3aed;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--gray-bg); color: var(--text-dark); }
+
+  .header { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--blue-mid) 100%); padding: 28px 40px; display:flex; align-items:center; justify-content:space-between; }
+  .header-left h1 { color:#fff; font-size:1.6rem; font-weight:700; letter-spacing:.5px; }
+  .header-left p { color:#9bb8d4; font-size:.9rem; margin-top:4px; }
+  .header-badge { background: var(--orange); color:#fff; padding:6px 16px; border-radius:20px; font-size:.8rem; font-weight:700; letter-spacing:.5px; }
+
+  .nav-tabs { background: var(--navy); display:flex; overflow-x:auto; padding: 0 40px; gap:4px; border-bottom: 3px solid var(--orange); }
+  .tab-btn { background:none; border:none; color:#9bb8d4; padding:14px 22px; font-size:.88rem; font-weight:600; cursor:pointer; white-space:nowrap; border-bottom:3px solid transparent; margin-bottom:-3px; transition:all .2s; letter-spacing:.3px; }
+  .tab-btn:hover { color:#fff; }
+  .tab-btn.active { color:#fff; border-bottom:3px solid var(--orange); background: rgba(255,255,255,.06); }
+
+  .tab-content { display:none; padding: 32px 40px; max-width:1200px; margin:0 auto; }
+  .tab-content.active { display:block; }
+
+  .section-title { font-size:1.4rem; font-weight:700; color: var(--navy); margin-bottom:6px; }
+  .section-sub { color: var(--text-light); font-size:.9rem; margin-bottom:24px; }
+  .divider { border:none; border-top:2px solid var(--gray-border); margin: 28px 0; }
+
+  .script-card { background:#fff; border-radius:12px; border:1px solid var(--gray-border); margin-bottom:28px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+  .script-header { background: linear-gradient(90deg, var(--navy) 0%, var(--blue-mid) 100%); padding:18px 24px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; }
+  .script-header h3 { color:#fff; font-size:1rem; font-weight:700; }
+  .script-header .badge { background: var(--orange); color:#fff; padding:4px 12px; border-radius:12px; font-size:.75rem; font-weight:700; }
+  .script-header .toggle-icon { color:#fff; font-size:1.2rem; transition:.2s; }
+  .script-header.open .toggle-icon { transform:rotate(180deg); }
+  .script-body { padding:24px; display:none; }
+  .script-body.open { display:block; }
+
+  .script-meta { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:20px; }
+  .meta-pill { background: var(--gray-bg); border:1px solid var(--gray-border); border-radius:8px; padding:6px 14px; font-size:.8rem; color: var(--text-mid); }
+  .meta-pill strong { color: var(--navy); }
+
+  .script-line { margin-bottom:14px; line-height:1.7; }
+  .script-line .label { display:inline-block; font-size:.7rem; font-weight:800; letter-spacing:.8px; text-transform:uppercase; padding:2px 8px; border-radius:4px; margin-right:8px; min-width:65px; text-align:center; vertical-align:top; margin-top:3px; }
+  .label.you { background:#dbeafe; color:#1e40af; }
+  .label.them { background:#fce7f3; color:#9d174d; }
+  .label.note { background:#fef3c7; color:#92400e; }
+  .label.brendan { background:#d1fae5; color:#065f46; }
+  .label.qualify { background:#ede9fe; color:#5b21b6; }
+  .label.stop { background:#fee2e2; color:#991b1b; }
+  .script-text { font-size:.92rem; color: var(--text-dark); display:inline; }
+  .script-text em { color: var(--text-light); font-style:italic; }
+  .script-text strong { color: var(--navy); }
+
+  .tip-box { background:#f0f7ff; border-left:4px solid var(--blue-light); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:.87rem; color: var(--text-mid); }
+  .tip-box strong { color: var(--navy); }
+  .warn-box { background:#fff7ed; border-left:4px solid var(--orange); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:.87rem; color: var(--text-mid); }
+  .qualify-box { background:#f5f3ff; border-left:4px solid var(--purple); border-radius:0 8px 8px 0; padding:14px 18px; margin:16px 0; font-size:.87rem; color:#3b1f6e; }
+  .qualify-box strong { color: var(--purple); }
+  .qualify-box .q-step { margin-bottom:10px; padding-bottom:10px; border-bottom:1px dashed #c4b5fd; }
+  .qualify-box .q-step:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .qualify-box .q-num { font-weight:800; color: var(--purple); margin-right:6px; }
+  .book-box { background:#ecfdf5; border-left:4px solid var(--green); border-radius:0 8px 8px 0; padding:14px 18px; margin:16px 0; font-size:.87rem; color:#064e3b; }
+  .book-box strong { color: var(--green); }
+  .stop-box { background:#fff1f2; border-left:4px solid var(--red); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:.87rem; color:#7f1d1d; }
+  .stop-box strong { color: var(--red); }
+
+  .roleplay-card { background:#fff; border-radius:12px; border:1px solid var(--gray-border); margin-bottom:20px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,.05); }
+  .roleplay-header { padding:16px 22px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; background: var(--gray-bg); border-bottom:1px solid var(--gray-border); }
+  .roleplay-header h4 { font-size:.95rem; font-weight:700; color: var(--navy); }
+  .roleplay-header .difficulty { font-size:.75rem; font-weight:700; padding:3px 10px; border-radius:10px; }
+  .diff-easy { background:#d1fae5; color:#065f46; }
+  .diff-med { background:#fef3c7; color:#92400e; }
+  .diff-hard { background:#fee2e2; color:#991b1b; }
+  .roleplay-body { padding:20px 22px; display:none; }
+  .roleplay-body.open { display:block; }
+  .objection-text { background:#fee2e2; border-radius:8px; padding:12px 16px; font-size:.9rem; font-weight:600; color:#7f1d1d; margin-bottom:16px; }
+  .objection-text::before { content:"💬 Prospect says: "; font-size:.78rem; font-weight:800; color:#b91c1c; display:block; margin-bottom:4px; }
+  .rebuttal-label { font-size:.72rem; font-weight:800; letter-spacing:.6px; text-transform:uppercase; color: var(--text-light); margin-bottom:8px; margin-top:12px; }
+  .rebuttal-option { background:#f0f9ff; border:1px solid #bae6fd; border-radius:8px; padding:12px 16px; margin-bottom:8px; font-size:.9rem; color: var(--text-dark); line-height:1.6; }
+  .rebuttal-option::before { content:"→ "; color: var(--blue-light); font-weight:700; }
+  .psychology-note { background:#faf5ff; border-left:3px solid #a78bfa; border-radius:0 8px 8px 0; padding:10px 14px; font-size:.82rem; color:#5b21b6; margin-top:10px; }
+  .psychology-note::before { content:"🧠 Psychology: "; font-weight:700; }
+
+  .training-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px,1fr)); gap:20px; margin-bottom:28px; }
+  .training-card { background:#fff; border-radius:12px; border:1px solid var(--gray-border); padding:22px; box-shadow:0 2px 6px rgba(0,0,0,.05); }
+  .training-card h4 { font-size:1rem; font-weight:700; color: var(--navy); margin-bottom:12px; display:flex; align-items:center; gap:10px; }
+  .training-card h4 .icon { font-size:1.3rem; }
+  .training-card p, .training-card li { font-size:.88rem; color: var(--text-mid); line-height:1.7; }
+  .training-card ul { padding-left:18px; }
+  .training-card li { margin-bottom:6px; }
+
+  .quick-ref { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); gap:16px; margin-bottom:28px; }
+  .qr-card { background:#fff; border-radius:10px; border:1px solid var(--gray-border); padding:18px; }
+  .qr-card h5 { font-size:.85rem; font-weight:800; color: var(--orange); text-transform:uppercase; letter-spacing:.5px; margin-bottom:10px; }
+  .qr-card p { font-size:.87rem; color: var(--text-mid); line-height:1.6; }
+
+  .timeline { display:flex; gap:0; margin:24px 0; overflow-x:auto; padding-bottom:8px; }
+  .tl-step { flex:1; min-width:160px; text-align:center; position:relative; }
+  .tl-step::after { content:''; position:absolute; top:24px; left:50%; right:-50%; height:3px; background: var(--gray-border); z-index:0; }
+  .tl-step:last-child::after { display:none; }
+  .tl-dot { width:48px; height:48px; border-radius:50%; background: var(--navy); color:#fff; font-size:1.1rem; font-weight:800; display:flex; align-items:center; justify-content:center; margin:0 auto 10px; position:relative; z-index:1; }
+  .tl-title { font-size:.78rem; font-weight:700; color: var(--navy); margin-bottom:4px; }
+  .tl-sub { font-size:.73rem; color: var(--text-light); }
+
+  .voicemail-box { background: linear-gradient(135deg, #1a3a5c, #2c5f8a); border-radius:12px; padding:24px; color:#fff; margin-bottom:20px; }
+  .voicemail-box h4 { font-size:1rem; font-weight:700; margin-bottom:14px; color: var(--orange-light); }
+  .voicemail-box p { font-size:.9rem; line-height:1.8; color:#d4e4f0; }
+
+  .cheat-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  @media(max-width:700px) { .cheat-grid { grid-template-columns:1fr; } }
+  .cheat-card { background:#fff; border-radius:10px; border:2px solid; padding:18px; }
+  .cheat-card.do { border-color:#27a865; }
+  .cheat-card.dont { border-color:#d94f4f; }
+  .cheat-card h5 { font-size:.9rem; font-weight:800; margin-bottom:12px; }
+  .cheat-card.do h5 { color: #27a865; }
+  .cheat-card.dont h5 { color: #d94f4f; }
+  .cheat-card li { font-size:.87rem; color: var(--text-mid); line-height:1.7; margin-bottom:5px; }
+
+  @media(max-width:768px) {
+    .header { padding:20px; flex-direction:column; gap:12px; }
+    .nav-tabs { padding: 0 16px; }
+    .tab-content { padding: 20px 16px; }
+  }
+
+  .btn-row { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
+  .expand-all-btn { background: var(--blue-mid); color:#fff; border:none; padding:8px 18px; border-radius:8px; font-size:.82rem; font-weight:600; cursor:pointer; }
+  .collapse-all-btn { background: var(--navy); color:#fff; border:none; padding:8px 18px; border-radius:8px; font-size:.82rem; font-weight:600; cursor:pointer; }
+
+  .section-label { font-size:.7rem; font-weight:800; letter-spacing:1px; text-transform:uppercase; color: var(--purple); background:#ede9fe; display:inline-block; padding:4px 12px; border-radius:20px; margin:14px 0 10px; }
+  .section-label.green { color:#065f46; background:#d1fae5; }
+  .section-label.orange { color:#92400e; background:#fef3c7; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>📞 Appointment Setting Scripts & Training</h1>
+    <p>Taxter Advisory Team · Barnum Financial Group · Brendan Hartos</p>
+  </div>
+  <div class="header-badge">BRENDAN — FIELD VERSION</div>
+</div>
+
+<div class="nav-tabs">
+  <button class="tab-btn active" onclick="showTab('process', this)">📋 Our Process</button>
+  <button class="tab-btn" onclick="showTab('brendan-scripts', this)">📱 Brendan's Scripts</button>
+  <button class="tab-btn" onclick="showTab('roleplays', this)">⚔️ Role Plays & Rebuttals</button>
+  <button class="tab-btn" onclick="showTab('brendan-training', this)">🎓 Brendan's Training</button>
+  <button class="tab-btn" onclick="showTab('cheatsheet', this)">⚡ Quick Cheat Sheet</button>
+</div>
+
+<!-- ==================== PROCESS ==================== -->
+<div class="tab-content active" id="tab-process">
+  <div class="section-title">Our 5-Meeting Financial Planning Process</div>
+  <div class="section-sub">Know this cold — it's what we're positioning. Every call's only goal is getting to Meeting 1.</div>
+
+  <div class="timeline">
+    <div class="tl-step">
+      <div class="tl-dot">1</div>
+      <div class="tl-title">Meet & Greet</div>
+      <div class="tl-sub">Phone · 15–20 min<br>Balance sheet + goals</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-dot">2</div>
+      <div class="tl-title">eMoney Projections</div>
+      <div class="tl-sub">Zoom · 60 min<br>Current plan snapshot</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-dot">3</div>
+      <div class="tl-title">Morningstar Review</div>
+      <div class="tl-sub">Zoom · 60 min<br>Investment X-Ray</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-dot">4</div>
+      <div class="tl-title">Recommendations</div>
+      <div class="tl-sub">Zoom · 60 min<br>Action plan + proposal</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-dot">5</div>
+      <div class="tl-title">Decision & Onboard</div>
+      <div class="tl-sub">Yes/No + paperwork</div>
+    </div>
+  </div>
+
+  <div class="training-grid">
+    <div class="training-card">
+      <h4><span class="icon">1️⃣</span>Meeting 1: Meet & Greet</h4>
+      <ul>
+        <li>15–20 min phone call (block 30 min to be safe)</li>
+        <li>Go through their balance sheet — assets, debts, income, expenses</li>
+        <li>Understand their goals: retirement age, income needs, legacy wishes</li>
+        <li>Identify what they want to focus on most</li>
+        <li>Input their data into eMoney financial planning software</li>
+        <li><strong>Key outcome:</strong> Book Meeting 2 on the call</li>
+      </ul>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">2️⃣</span>Meeting 2: eMoney Financial Plan</h4>
+      <ul>
+        <li>Show their current plan with NO changes made</li>
+        <li>Walk through projections, cash flow, balance sheet in eMoney</li>
+        <li>Reveal gaps — "If you do nothing, here's where you land"</li>
+        <li>Sometimes skipped — go straight from Meeting 1 to Meeting 3</li>
+        <li><strong>Key outcome:</strong> Create urgency around the need to act</li>
+      </ul>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">3️⃣</span>Meeting 3: Morningstar Investment Review</h4>
+      <ul>
+        <li>Input all current holdings into Morningstar</li>
+        <li>Run a full Portfolio X-Ray analysis</li>
+        <li>Review: past performance, risk, fees, concentration, benchmark</li>
+        <li>Compare to S&P 500 — highlight best/worst years</li>
+        <li>Show concentration risk and underperformance clearly</li>
+        <li><strong>Key outcome:</strong> Prospect sees the problem clearly</li>
+      </ul>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">4️⃣</span>Meeting 4: Investment Recommendations</h4>
+      <ul>
+        <li>Present the Action Plan: Short / Intermediate / Long-term buckets</li>
+        <li>Active management option: 1% fee, actively traded managed accounts</li>
+        <li>Registered Index Linked Annuity options (0% fee, downside protection)</li>
+        <li>Often a combination of both strategies</li>
+        <li>Compare current portfolio to proposal side by side</li>
+        <li><strong>Key outcome:</strong> Present the ask — can get a yes right here</li>
+      </ul>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">5️⃣</span>Meeting 5: Decision & Onboarding</h4>
+      <ul>
+        <li>Yes or no</li>
+        <li>If yes: begin paperwork and account transfer process</li>
+        <li>Sometimes the decision comes at Meeting 4 — be ready</li>
+        <li>If no: understand the objection and schedule a follow-up</li>
+      </ul>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">🎯</span>The 6 Planning Pillars</h4>
+      <ul>
+        <li>🏖️ <strong>Retirement Planning</strong> — income projections, Social Security optimization</li>
+        <li>📈 <strong>Investment Strategies</strong> — active management + protected growth options</li>
+        <li>💰 <strong>Tax Strategies</strong> — Roth conversions, tax-loss harvesting</li>
+        <li>🏛️ <strong>Estate & Legacy Planning</strong> — trusts, beneficiaries, wealth transfer</li>
+        <li>🛡️ <strong>Protection Planning</strong> — life insurance, long-term care</li>
+        <li>💼 <strong>Wealth Management</strong> — holistic coordination of everything</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>The Core Offer:</strong> A complimentary financial planning process — no cost, no obligation. We do the work upfront and show them what we find. The first call is just a 15-20 minute conversation to understand their situation — always book 30 minutes to be safe.
+  </div>
+</div>
+
+<!-- ==================== BRENDAN SCRIPTS ==================== -->
+<div class="tab-content" id="tab-brendan-scripts">
+  <div class="section-title">Brendan's Scripts — Appointment Setting</div>
+  <div class="section-sub">Brendan — your ONLY job is to get them to agree to a meeting, qualify them, find their pain, and then book a time on AJ's calendar. Keep it warm, simple, and confident.</div>
+
+  <div class="tip-box" style="margin-bottom:16px;">
+    <strong>Brendan's Golden Rule:</strong> You are NOT selling financial planning. You are scheduling a qualified conversation. If someone asks a financial question — anything about investments, fees, specific strategies — your answer is always: <em>"That's a great question — and that's exactly what AJ will be able to walk you through on the call. I'm just here to get you scheduled, but he'll answer all of that for you."</em>
+  </div>
+  <div class="warn-box" style="margin-bottom:24px;">
+    <strong>Never mention specific fees, specific investment products, or investment strategies.</strong> AJ handles all of that in the meeting. Your job is the calendar.
+  </div>
+
+  <div class="btn-row">
+    <button class="expand-all-btn" onclick="toggleAll('brendan', true)">Expand All</button>
+    <button class="collapse-all-btn" onclick="toggleAll('brendan', false)">Collapse All</button>
+  </div>
+
+  <!-- BRENDAN SCRIPT 1 -->
+  <div class="script-card" data-group="brendan">
+    <div class="script-header" onclick="toggleScript(this)">
+      <h3>Script B1 — "The Introduction & Qualification Call" (Your Main Script)</h3>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <div class="badge">Use This 90% of the Time</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="script-body">
+      <div class="script-meta">
+        <div class="meta-pill"><strong>Tone:</strong> Friendly, upbeat, professional</div>
+        <div class="meta-pill"><strong>Goal:</strong> Qualify prospect + book meeting on AJ's calendar</div>
+        <div class="meta-pill"><strong>Length:</strong> 5–10 min with qualification</div>
+      </div>
+
+      <div class="section-label orange">🎙️ THE OPENER</div>
+      <div class="script-line">
+        <span class="label brendan">BRENDAN</span>
+        <span class="script-text">Hi, can I speak with [First Name]? <em>(wait)</em></span>
+      </div>
+      <div class="script-line">
+        <span class="label them">THEM</span>
+        <span class="script-text">Speaking.</span>
+      </div>
+      <div class="script-line">
+        <span class="label brendan">BRENDAN</span>
+        <span class="script-text">Hey [First Name] — I am calling on behalf of AJ Donofrio, a financial advisor at Barnum Financial Group. The reason for the call is regarding your recent job status change from [Company Name]. I'll keep this super quick for you — okay? <em>(pause)</em></span>
+      </div>
+      <div class="script-line">
+        <span class="label brendan">BRENDAN</span>
+        <span class="script-text">AJ works specifically with people going through a major life transition — like a retirement or a career change — and he's offering a complimentary financial planning process at no cost to you. He basically goes through your entire financial picture and gives you an honest assessment of where you stand and what your options are. The first step is just a quick 15-minute phone call. No paperwork, nothing to prepare. Would you be open to something like that?</span>
+      </div>
+      <div class="script-line">
+        <span class="label them">THEM</span>
+        <span class="script-text">Sure. / I guess so. / Okay, tell me more.</span>
+      </div>
+
+      <div class="section-label">🟣 QUALIFICATION — Don't Skip This</div>
+      <div class="qualify-box">
+        <strong>Say this transition:</strong> "Perfect. Before we put a date in the calendar, I just want to jot a couple of notes down so when you and AJ meet, you can hit the ground running."<br><br>
+
+        <div class="q-step">
+          <span class="q-num">Q1.</span> "First — just for starters — how many years were you working at [Company Name]?"
+        </div>
+        <div class="q-step">
+          <span class="q-num">Q2.</span> "And were you contributing to their retirement plan for the entire time you were there?"
+        </div>
+        <div class="q-step">
+          <span class="q-num">Q3.</span> "Were any of your contributions post-tax Roth dollars, or were they all pre-tax?"<br>
+          <em style="font-size:.82rem; color:#6d28d9; display:block; margin-top:4px;">→ If they don't know what that means: "No worries — that's something AJ will be able to help you figure out on the call."</em>
+        </div>
+        <div class="q-step">
+          <span class="q-num">Q4.</span> "Ballpark — how much do you think you've accrued in that account?"<br>
+          <em style="font-size:.82rem; color:#6d28d9; display:block; margin-top:4px;">→ If they hesitate: "Even a rough ballpark is totally fine — I'm just jotting notes for AJ."</em>
+        </div>
+        <div class="q-step">
+          <span class="q-num">Q5.</span> "Is this the first time you'd be going through a financial planning process, or have you worked with a financial advisor before?"
+        </div>
+        <div class="q-step" style="border-bottom:none;">
+          <span class="q-num">Q6.</span> <strong>If they've had an advisor before:</strong> "And how long ago was that? Do you still work with them?"<br><br>
+          &nbsp;&nbsp;&nbsp;↳ <strong>If still working with an advisor:</strong> "Got it! And are you open to investment recommendations, or are you pretty set with how things are?"<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• <strong>If open:</strong> Continue below ✅<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• <strong>If NOT open:</strong> See Stop Box below 🛑
+        </div>
+      </div>
+
+      <div class="stop-box">
+        <strong>🛑 IF They Are NOT Open to Recommendations:</strong><br>
+        "I completely understand — and honestly, AJ would never want to step on anyone's toes. It sounds like you're well taken care of. If anything ever changes, or you'd ever want a second opinion down the road, I'll make sure AJ reaches back out. I really appreciate your time today!"<br><br>
+        <em>End the call politely. Log the outcome. Do not push further.</em>
+      </div>
+
+      <div class="section-label orange">🔍 FINDING PAIN — The 6 Areas</div>
+      <div class="script-line">
+        <span class="label brendan">BRENDAN</span>
+        <span class="script-text">Great. AJ covers a lot of ground so I just want to get a sense of what's most important to you. When you think about your finances right now, which of these areas feels most pressing? I'll just go through them real quick:</span>
+      </div>
+      <div class="qualify-box">
+        <div class="q-step">🏖️ <strong>"Retirement planning"</strong> — like when you can retire and making sure the income is going to be there</div>
+        <div class="q-step">📈 <strong>"Your investments"</strong> — making sure your money is positioned the right way for where you are now</div>
+        <div class="q-step">💰 <strong>"Tax planning"</strong> — thinking about ways to reduce what you're paying in taxes</div>
+        <div class="q-step">🏛️ <strong>"Estate and legacy"</strong> — making sure your assets go to the right people</div>
+        <div class="q-step">🛡️ <strong>"Protection"</strong> — life insurance, long-term care, that kind of thing</div>
+        <div class="q-step" style="border-bottom:none;">💼 <strong>"Just having everything in one place"</strong> — one person who sees your full picture</div>
+      </div>
+      <div class="tip-box"><strong>Listen closely.</strong> Whatever they react to — that's the pain point. Reference it in your close: "It sounds like [area] is really important to you — that's exactly what AJ is going to be able to dig into with you."</div>
+
+      <div class="section-label orange">📋 QUICK MEETING OVERVIEW</div>
+      <div class="script-line">
+        <span class="label brendan">BRENDAN</span>
+        <span class="script-text">Perfect — I'll pass all of this along to AJ so he's prepared. Here's basically how the process works: You'd start with a quick phone call with AJ where he goes through your financial picture and learns about your goals. From there he'll run your numbers through a financial planning software and do a full review of your investments. Then he puts together an action plan and walks you through his recommendations. The whole process is at no cost to you. Pretty straightforward.</span>
+      </div>
+
+      <div class="section-label green">📅 THE BOOKING CLOSE</div>
+      <div class="script-line">
+        <span class="label brendan">BRENDAN</span>
+        <span class="script-text">As I mentioned, the first meeting is a quick 10-15 minute phone call and we'll pencil in a 30-minute window in case it goes long. Do you prefer mornings, afternoons, or evenings? And are there any particular days of the week that work best for you?</span>
+      </div>
+      <div class="script-line">
+        <span class="label them">THEM</span>
+        <span class="script-text"><em>[They give a preference]</em></span>
+      </div>
+      <div class="script-line">
+        <span class="label brendan">BRENDAN</span>
+        <span class="script-text"><em>[Find time in AJ's calendar]</em> Great — I've got [Day, Date] at [Time] — does that work for you?</span>
+      </div>
+
+      <div class="book-box">
+        <strong>✅ Confirmation Close — Say This Word for Word:</strong><br><br>
+        "Perfect. I am going to send over a calendar invitation with all of AJ's information, the date and time confirmation — that's [say the day, date, and time back to them] — a link to AJ's website at Barnum Financial Group, and the phone number that he'll be calling you from. Can I grab your best email address for that?"<br><br>
+        <em>Get the email → Send the invite → Log the outcome. Done.</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRENDAN SCRIPT 2 -->
+  <div class="script-card" data-group="brendan">
+    <div class="script-header" onclick="toggleScript(this)">
+      <h3>Script B2 — "The Softer Opener" (When They Seem Hesitant or Rushed)</h3>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <div class="badge">Use When: Tone Feels Guarded</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="script-body">
+      <div class="script-meta">
+        <div class="meta-pill"><strong>Tone:</strong> Low pressure, empathetic</div>
+        <div class="meta-pill"><strong>Goal:</strong> Ease their guard, qualify, then book</div>
+      </div>
+
+      <div class="section-label orange">🎙️ THE OPENER</div>
+      <div class="script-line">
+        <span class="label brendan">BRENDAN</span>
+        <span class="script-text">Hi [First Name] — I am calling on behalf of AJ Donofrio, a financial advisor at Barnum Financial Group. The reason for the call is regarding your recent job status change from [Company Name]. I know you're probably in the middle of something so I'll be really quick — okay? <em>(pause)</em></span>
+      </div>
+      <div class="script-line">
+        <span class="label brendan">BRENDAN</span>
+        <span class="script-text">AJ specializes in working with people who've recently retired or left a position — and he's offering a complimentary planning process at no cost to you, no obligation. He goes through your financial picture and gives you an honest look at where things stand. The first step is literally just a 15-minute phone call. No paperwork, nothing to prepare. Would you be open to at least learning more?</span>
+      </div>
+      <div class="script-line">
+        <span class="label them">THEM</span>
+        <span class="script-text">Okay, what does that involve?</span>
+      </div>
+      <div class="script-line">
+        <span class="label brendan">BRENDAN</span>
+        <span class="script-text">It really is just a conversation — AJ gets to know your situation a little bit, goes through things like where your money is, what your goals are, and what areas of your finances feel most unsettled right now. He's not going to push anything on you. A lot of people find it really valuable, especially during a transition like this. Want me to find a time that works?</span>
+      </div>
+
+      <div class="section-label">🟣 QUALIFICATION + BOOKING</div>
+      <div class="tip-box">Once they agree — run through the Qualification Framework (Q1–Q6), find pain, give the meeting overview, then close on time preference with the standard booking confirmation. Same flow as Script B1.</div>
+
+      <div class="warn-box"><strong>If they ask a detailed financial question during the call:</strong> "That's a really great question — and honestly that's exactly what AJ would walk you through on the call. I'm just here to get you scheduled, but he'll be able to answer all of that for you. That's kind of the whole point of the first meeting!"</div>
+    </div>
+  </div>
+
+  <!-- BRENDAN SCRIPT 3 -->
+  <div class="script-card" data-group="brendan">
+    <div class="script-header" onclick="toggleScript(this)">
+      <h3>Script B3 — Voicemail Scripts</h3>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <div class="badge">Keep Under 25 Seconds</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="script-body">
+      <div class="voicemail-box">
+        <h4>🎙️ Voicemail BV-1 — Standard First Attempt</h4>
+        <p>"Hey [First Name] — I'm calling on behalf of AJ Donofrio at Barnum Financial Group, regarding your recent job status change from [Company Name]. AJ is offering a complimentary financial planning process at no cost and I'd love to find a time for you to connect with him for a quick 15-minute call. Give me a call back at [your number] and I'll get you set up. Thanks — have a great day!"</p>
+      </div>
+      <div class="voicemail-box" style="margin-top:16px;">
+        <h4>🎙️ Voicemail BV-2 — Second Attempt Follow-Up</h4>
+        <p>"Hey [First Name], Brendan again from Barnum Financial Group — just following up from my earlier call. AJ has a couple of spots open this week and I wanted to see if one of those might work for you. No obligation at all — it's literally just a quick 15-minute call. Give me a ring at [number] and I'll take care of the scheduling. Thanks!"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRENDAN SCRIPT 4 -->
+  <div class="script-card" data-group="brendan">
+    <div class="script-header" onclick="toggleScript(this)">
+      <h3>Script B4 — Getting Past a Gatekeeper / Spouse</h3>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <div class="badge">Use When: Someone Else Answers</div>
+        <div class="toggle-icon">▼</div>
+      </div>
+    </div>
+    <div class="script-body">
+      <div class="script-line">
+        <span class="label them">THEM</span>
+        <span class="script-text">[Spouse or someone else picks up] "Hello?"</span>
+      </div>
+      <div class="script-line">
+        <span class="label brendan">BRENDAN</span>
+        <span class="script-text">Hi there — is [First Name] available? <em>(pause)</em></span>
+      </div>
+      <div class="script-line">
+        <span class="label them">THEM</span>
+        <span class="script-text">Who's calling?</span>
+      </div>
+      <div class="script-line">
+        <span class="label brendan">BRENDAN</span>
+        <span class="script-text">This is Brendan — I'm calling from Barnum Financial Group. It's a quick personal call, just a couple of minutes.</span>
+      </div>
+      <div class="script-line">
+        <span class="label them">THEM</span>
+        <span class="script-text">He/she's not available. Can I take a message?</span>
+      </div>
+      <div class="script-line">
+        <span class="label brendan">BRENDAN</span>
+        <span class="script-text">Sure! Could you let them know that Brendan from Barnum Financial Group called? We're reaching out regarding [First Name]'s recent job change, and I'd love to find a time for them to connect with our advisor AJ Donofrio. I'll try back as well — what's usually a good time to catch them?</span>
+      </div>
+      <div class="tip-box"><strong>If the spouse seems engaged:</strong> "Actually — since you'd probably be part of any financial discussions too, would it make sense to include you on the call? These conversations are usually better when both people are involved. AJ actually recommends it."</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== ROLE PLAYS ==================== -->
+<div class="tab-content" id="tab-roleplays">
+  <div class="section-title">Role Plays & Objection Handling</div>
+  <div class="section-sub">Every objection is a question in disguise. Practice these until your responses feel natural — not scripted. The prospect's words are shown first, then multiple ways to handle it.</div>
+
+  <div class="btn-row">
+    <button class="expand-all-btn" onclick="toggleAll('rp', true)">Expand All</button>
+    <button class="collapse-all-btn" onclick="toggleAll('rp', false)">Collapse All</button>
+  </div>
+
+  <!-- RP 1 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-01 · "I'm Not Interested"</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-easy">Easy</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"I'm not interested."</div>
+      <div class="rebuttal-label">Rebuttal Options:</div>
+      <div class="rebuttal-option">I completely understand — and I'm not calling to sell you anything today. I'm just looking to see if a complimentary financial review would make sense for your situation. Can I ask — do you already have a solid plan in place for [retirement income / your finances going forward]?</div>
+      <div class="rebuttal-option">Fair enough — and most people say that before they hear what it actually involves. This isn't a pitch. It's a complimentary analysis of your own finances, at no cost to you — no products, no pressure. The only question is whether it'd be worth 15 minutes of your time. Would that be a flat no, or more of a "not right now"?</div>
+      <div class="rebuttal-option"><em>[Brendan]</em> Totally fair. If I could just ask — is it the timing, or is it more that you're not really looking to do anything with your finances right now? I want to make sure I'm not wasting your time either.</div>
+      <div class="psychology-note">They're not saying no to the offer — they're protecting their time. Separate "not interested in this call" from "not interested in their own financial wellbeing." Redirect to their situation, not the service.</div>
+    </div>
+  </div>
+
+  <!-- RP 2 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-02 · "I Already Have a Financial Advisor"</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-med">Medium</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"I already have a financial advisor."</div>
+      <div class="rebuttal-label">Rebuttal Options:</div>
+      <div class="rebuttal-option"><em>[AJ]</em> That's great — and I'm not here to replace anyone. What I do is a completely independent second opinion on your current portfolio and financial plan. At no cost to you. In my experience, even people who've had an advisor for years often find things that have been overlooked — fees they weren't aware of, concentration risks, gaps in their retirement projections. Would a second set of eyes on your situation be something you'd be open to?</div>
+      <div class="rebuttal-option"><em>[AJ]</em> Totally understand. Out of curiosity — when's the last time your advisor ran a full portfolio analysis on your accounts and compared your performance to the S&P 500 benchmark? A lot of advisors are great at relationship management but don't necessarily do that level of analysis. I'd love to show you what that looks like, at no cost, with no strings attached.</div>
+      <div class="rebuttal-option"><em>[Brendan]</em> Oh, that's great! AJ actually works alongside people who already have advisors quite often — it's more of a second-opinion type thing. He's not looking to replace anyone, just give you an independent outside look. Would that be worth a quick call?</div>
+      <div class="rebuttal-label">If They Say They're Happy and Not Open to Change:</div>
+      <div class="rebuttal-option"><em>[Both]</em> That's completely fair — and the last thing I want to do is step on anyone's toes. If anything ever changes or you'd want a second opinion down the road, I'd love to be the person you call. I'll make a note and maybe follow up with you in a few months. Thanks for your time!</div>
+      <div class="psychology-note">Don't compete with their current advisor. Position yourself as additive, not replacing. If they're happy and closed, back out gracefully — protecting the relationship is worth more than a forced meeting.</div>
+    </div>
+  </div>
+
+  <!-- RP 3 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-03 · "Send Me Something in the Mail / Email"</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-med">Medium</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"Just send me something in the mail." / "Email me something."</div>
+      <div class="rebuttal-label">Rebuttal Options:</div>
+      <div class="rebuttal-option"><em>[AJ]</em> Absolutely — and once I know a little more about your specific situation, what I send will actually be relevant to you rather than generic. Can I ask you one quick question first, just so I know what to focus on?</div>
+      <div class="rebuttal-option"><em>[AJ]</em> I appreciate that. The challenge is that what I do is very hard to show on paper — the value really comes from going through your numbers together. What I can do is send something over and also get a quick call on the calendar so I can answer any questions you have about it. Would that work?</div>
+      <div class="rebuttal-option"><em>[Brendan]</em> Of course — but honestly, AJ's process is really personalized, so the best way to understand what he does is just a quick call. What if I grab your email, send a quick intro, and we also pencil in a 15-minute call so AJ can explain it in person? You can always cancel if it doesn't feel right.</div>
+      <div class="psychology-note">"Send me something" is almost always a soft brush-off, not a genuine request. If you send without booking a call, follow-through drops to nearly zero. Get the call first — confirm with email as a secondary step.</div>
+    </div>
+  </div>
+
+  <!-- RP 4 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-04 · "What's the Catch? / Is This Really Complimentary?"</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-easy">Easy</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"What's the catch? Nothing is ever really complimentary."</div>
+      <div class="rebuttal-label">Rebuttal Options:</div>
+      <div class="rebuttal-option"><em>[AJ]</em> You're right to ask that — and I'll be straight with you. I'm a financial advisor. If we go through this process and you like what you see and want to work together, then at that point we'd talk about what it looks like to manage your investments together. But the analysis, the planning, the investment review — all of that is done at no cost to you, regardless of what you decide. I do it because I believe in showing value before asking for anything.</div>
+      <div class="rebuttal-option"><em>[AJ]</em> No catch. The planning process itself costs you nothing. I show you everything upfront and you make a decision from there. I've had plenty of meetings where people just walked away with better information, and that's a fine outcome for me too. What matters is that you get value from the conversation.</div>
+      <div class="rebuttal-option"><em>[Brendan]</em> That's a completely fair question! The planning process itself is at no cost — AJ doesn't charge for any of that. He just does it as a way to get to know people and see if there's a fit. There's no obligation involved.</div>
+      <div class="psychology-note">Honesty builds trust here. Trying to hide how you make money creates doubt. Being transparent about the business model makes them significantly more comfortable moving forward.</div>
+    </div>
+  </div>
+
+  <!-- RP 5 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-05 · "I Don't Have Time Right Now"</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-easy">Easy</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"I don't have time right now." / "This isn't a good time."</div>
+      <div class="rebuttal-label">Rebuttal Options:</div>
+      <div class="rebuttal-option">Of course — I'm not looking to take up your time today. The actual meeting would be a quick 15-minute phone call, and we can schedule it for whenever works for you — even a few weeks out. When would be a better time for me to follow up?</div>
+      <div class="rebuttal-option">Totally get it. I just need about 30 more seconds right now — can I grab a time that works for your schedule later this week or next? I'll handle everything else from there.</div>
+      <div class="rebuttal-option"><em>[If persistently busy]</em> No problem at all. The one thing I'll say is that the financial decisions made in the first few months of a transition like yours tend to have long-term implications. I'd hate for timing to cost you later on. Can we find a time a few weeks out that works?</div>
+      <div class="psychology-note">People who say "not right now" just need an easy out from the current moment. Give it to them — but lock in a future time before you hang up. Never end without a next step.</div>
+    </div>
+  </div>
+
+  <!-- RP 6 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-06 · "I Need to Talk to My Spouse First"</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-med">Medium</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"I need to talk to my husband / wife before I do anything."</div>
+      <div class="rebuttal-label">Rebuttal Options:</div>
+      <div class="rebuttal-option">Absolutely — and I'd actually encourage you to have your spouse on the call with you. This planning process works best when both people are involved. Would it make more sense to find a time where you're both available?</div>
+      <div class="rebuttal-option">That makes perfect sense. Mention to your spouse that there's a complimentary financial review available at no cost and see what they think. Then I'll follow up in a couple of days. Is [Tuesday or Wednesday] a good time for me to call back?</div>
+      <div class="rebuttal-option"><em>[AJ]</em> Of course — and I totally agree. These conversations should include both of you. The first meeting is just a 15-minute call to go through a basic overview, but I actually prefer when both people are there because it saves time and you're on the same page. Can we find a time this week or next where you're both around?</div>
+      <div class="psychology-note">Never fight this one. The play is to include the spouse rather than wait for them to be consulted offline. Once the call ends without a booking, momentum drops dramatically.</div>
+    </div>
+  </div>
+
+  <!-- RP 7 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-07 · "I Manage My Own Money" / "I Don't Need an Advisor"</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-hard">Hard</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"I handle my own investments. I don't need an advisor." / "I've been doing this for years."</div>
+      <div class="rebuttal-label">Rebuttal Options:</div>
+      <div class="rebuttal-option"><em>[AJ]</em> That's great — and I have a lot of respect for people who are engaged in their own finances. The question isn't whether you're capable — it's whether you have the institutional tools to do a full forensic analysis on your own portfolio. I use Morningstar — the same platform that institutional fund managers use — and what it shows even seasoned investors about their own portfolios is usually eye-opening. Would you be open to letting me run that analysis just to see?</div>
+      <div class="rebuttal-option"><em>[AJ]</em> Absolutely — and I'm not questioning that. But let me ask you: do you know your exact fee load across all your accounts? Do you know how your portfolio held up in 2022's downturn versus the benchmark? Most self-directed investors are surprised when we put it all on one screen. I'm not saying there's a problem — but wouldn't you want to know for sure?</div>
+      <div class="rebuttal-option"><em>[Brendan]</em> That's great that you're on top of it! The review AJ does is actually a little different from what most people do on their own — he uses a really powerful tool that puts all your accounts together and compares them to the market. A lot of people who manage their own money find it really interesting. It's purely an analysis — no pressure. Would you be open to seeing it?</div>
+      <div class="psychology-note">Don't challenge their competence — that will shut them down immediately. Position the value as additional institutional tools and information, not a replacement for their judgment. Their confidence is actually an asset — engaged investors are often the best prospects.</div>
+    </div>
+  </div>
+
+  <!-- RP 8 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-08 · "How Did You Get My Number?"</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-hard">Hard</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"How did you get my number? Where did you find me?"</div>
+      <div class="rebuttal-label">Rebuttal Options:</div>
+      <div class="rebuttal-option"><em>[AJ]</em> Great question — and completely fair to ask. We use professional data services to identify people going through significant life transitions, like a recent retirement or career change, because that's who our services are most relevant to. I'm not calling randomly — I'm calling people who are specifically in a situation where what I offer tends to add real value. If you'd prefer I remove your information, I'll do that right now. But I did want to at least make the offer.</div>
+      <div class="rebuttal-option"><em>[Brendan]</em> That's a totally fair question. We use a professional service that helps us identify people going through big transitions like a job change or retirement — that's how we reached you. If you'd like to be taken off our list, just say the word and I'll take care of that right away. I just wanted to at least make the offer since it's at no cost and no obligation.</div>
+      <div class="psychology-note">Don't be defensive. Be matter-of-fact and calm. Most people just want to know they're not being scammed. Always offer to remove them — it shows respect and actually often de-escalates the tension and makes them more likely to listen.</div>
+    </div>
+  </div>
+
+  <!-- RP 9 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-09 · "I Just Lost My Job — This Isn't a Good Time"</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-hard">Hard</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"I just got laid off and I'm dealing with a lot right now. This really isn't a good time."</div>
+      <div class="rebuttal-label">Rebuttal Options:</div>
+      <div class="rebuttal-option"><em>[AJ]</em> I completely understand — and I'm sorry you're going through that. I'm not calling to add to your plate. What I will say is that this moment, as difficult as it is, is actually when having a clear financial picture matters most. Questions like how long your savings can sustain you, what to do with your 401k from your old employer, and whether there are tax decisions to make this year — these have real dollar implications. I'm not asking you to commit to anything. Can we just find 15 minutes in the next few weeks when the dust has settled?</div>
+      <div class="rebuttal-option"><em>[Brendan]</em> I'm really sorry to hear that — that's a tough situation. I don't want to add any pressure at all. AJ actually works with a lot of people in exactly this situation, and he might be able to help you think through some of the financial questions that come up during a transition like this. At no cost to you. Would it be okay if I had him reach out in a couple of weeks when things feel a little calmer?</div>
+      <div class="psychology-note">Match their energy with empathy first — always. Don't pivot to a pitch immediately. Show you heard them. Then gently reframe the timing as a reason this is worth having, not an intrusion. A soft ask to follow up in 2–3 weeks is often the best close here.</div>
+    </div>
+  </div>
+
+  <!-- RP 10 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-10 · "I Have My Money at Fidelity / Vanguard / Schwab"</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-med">Medium</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"My money is at Fidelity. I'm happy there." / "I use Vanguard — low fees, I don't need an advisor."</div>
+      <div class="rebuttal-label">Rebuttal Options:</div>
+      <div class="rebuttal-option"><em>[AJ]</em> Fidelity is a great custodian — and I actually work with accounts held at Fidelity, Schwab, and others. I'm not asking you to move anything or change where your money sits. What I offer is a layer of active portfolio management and financial planning on top of what you already have. The question isn't where your money is held — it's whether it's positioned the right way for your goals and your timeline right now.</div>
+      <div class="rebuttal-option"><em>[AJ]</em> Vanguard is great for a lot of things. But here's what they don't do — they don't proactively reposition your portfolio when the market shifts, they don't do tax planning, they don't do retirement income modeling or estate coordination. Those are things I do. You can still hold Vanguard funds — I just add a layer of strategy around them. Worth 15 minutes to see what that looks like?</div>
+      <div class="rebuttal-option"><em>[Brendan]</em> That's great! AJ actually works with people who use Fidelity and Vanguard all the time — it's not about moving your money, he just adds a planning layer on top of what you already have. It's really complementary. Would you be open to a quick call just to see?</div>
+      <div class="psychology-note">Don't knock Fidelity or Vanguard — their customers are loyal for a reason. Position yourself as a service layer on top, not a replacement. The distinction between a custodian and an advisor is your strongest argument here.</div>
+    </div>
+  </div>
+
+  <!-- RP 11 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-11 · "I'm Not Ready to Make Any Changes"</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-med">Medium</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"I just want to leave everything where it is for now." / "I'm not ready to do anything."</div>
+      <div class="rebuttal-label">Rebuttal Options:</div>
+      <div class="rebuttal-option"><em>[AJ]</em> That's completely fine — and I want to be clear, I'm not asking you to make any changes. What I'm offering is a review — just so you know what you have. You can look at the analysis and decide to do absolutely nothing, and that's a valid outcome. Most people just want to know they're not missing something. Can we at least do that?</div>
+      <div class="rebuttal-option"><em>[AJ]</em> I hear you. Can I ask — is it that you've made a deliberate decision to stay the course, or more that you just haven't had a chance to dig into it yet? Because if it's the latter, that's actually exactly when a review is most useful — before you've committed to a direction.</div>
+      <div class="psychology-note">Separate the analysis from the action. The review creates information, not obligation. Make clear that sitting down doesn't commit them to doing anything. That removes the biggest psychological barrier to booking.</div>
+    </div>
+  </div>
+
+  <!-- RP 12 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-12 · "The Market Is Too Uncertain Right Now"</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-med">Medium</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"With everything going on, I'd rather just sit in cash for now."</div>
+      <div class="rebuttal-label">Rebuttal Options — AJ Only:</div>
+      <div class="rebuttal-option"><em>[AJ]</em> I completely understand that instinct — and I'm not here to tell you the market is always great. But there's a real cost to sitting in cash too: inflation. At 3–4% inflation, $500,000 in cash loses $15,000–$20,000 of purchasing power every single year. Part of what I help people figure out is finding the right balance between protection and growth — and there are options specifically designed for people who want their money working for them without the full volatility exposure. That's exactly what the review is designed to help us figure out for your specific situation.</div>
+      <div class="rebuttal-option"><em>[AJ]</em> Market anxiety is completely legitimate — and it's one of the most common things I work through with people. The goal isn't to convince you to do anything specific. It's to make sure that whatever you decide to do, you're doing it intentionally, with a full picture in front of you — not just reacting to the noise. That's what the first meeting is about.</div>
+      <div class="psychology-note">Validate the fear — never dismiss it. Then introduce the inflation cost of inaction, which is equally real. You're not telling them to dive into the market — you're showing them that "doing nothing" has its own risks and that having a clear plan beats reacting.</div>
+    </div>
+  </div>
+
+  <!-- RP 13 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-13 · "Call Me Back Later" / "Try Me in a Few Months"</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-easy">Easy</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"Now's not a great time. Call me back in a few months."</div>
+      <div class="rebuttal-label">Rebuttal Options:</div>
+      <div class="rebuttal-option">Of course — I'll put it on my calendar. Can I ask what's going on in the next few months that makes now not ideal? Just so I know when the right time to reach back out is and what to focus on.</div>
+      <div class="rebuttal-option">Absolutely. And I'll be honest — the early months of a financial transition are typically when the most important decisions get made. But I'll respect your timing completely. Can we lock in a specific follow-up date right now so I'm not just calling you randomly?</div>
+      <div class="rebuttal-option"><em>[Brendan]</em> Of course! When would be a good time — I want to make sure I reach out when it actually works for you. Should I try back in about four weeks? I'll make a note and follow up then.</div>
+      <div class="psychology-note">Always get a specific date before hanging up. "A few months" turns into never. Lock in a day, put it in the CRM, and actually follow up. The callback is a warm lead — don't lose it to vagueness.</div>
+    </div>
+  </div>
+
+  <!-- RP 14 -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-14 · "I Need to Think About It" (After Meeting 4 — AJ Only)</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-hard">Hard</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"This all looks really good but I need some time to think about it."</div>
+      <div class="rebuttal-label">Rebuttal Options — AJ Only (Meeting 4 Close):</div>
+      <div class="rebuttal-option">Of course — this is an important decision and I'd never want you to rush. Can I ask — is there a specific part of the proposal you want to think through more? Sometimes there's one thing holding someone back and we can address it right now, or at least make sure you have all the information you need.</div>
+      <div class="rebuttal-option">Totally fair. What I'd suggest is this — let's set a follow-up call for [3–5 days from now]. That gives you time to review everything, and if any questions come up between now and then, just text or call me directly. Does [specific day] work?</div>
+      <div class="rebuttal-option"><em>[If you sense it's a soft no]</em> I appreciate you saying that. And I want to be straight with you — if there's something about this that doesn't feel right, I'd rather know now than have you feel obligated. Is there a concern I haven't addressed yet?</div>
+      <div class="psychology-note">"I need to think about it" is usually either: a hidden objection, a need for spousal input, or genuine processing time. Probe for the first, offer to include the spouse for the second, and set a specific callback for the third. Never just say "okay, take your time" and hang up without a next step.</div>
+    </div>
+  </div>
+
+  <!-- RP 15 — Qualification Objection -->
+  <div class="roleplay-card" data-group="rp">
+    <div class="roleplay-header" onclick="toggleRoleplay(this)">
+      <h4>RP-15 · "Why Are You Asking Me All These Questions?" (During Qualification)</h4>
+      <div style="display:flex;gap:10px;align-items:center;"><span class="difficulty diff-med">Medium</span><span>▼</span></div>
+    </div>
+    <div class="roleplay-body">
+      <div class="objection-text">"Why do you need to know all of this before we even meet?" / "I'm not comfortable sharing that."</div>
+      <div class="rebuttal-label">Rebuttal Options:</div>
+      <div class="rebuttal-option">Completely fair — and I want you to know, you don't have to share anything you're not comfortable with. The reason I ask is purely to help AJ prepare. The more he knows going in, the more focused and valuable the first call will be for you. A rough ballpark is totally fine — we're not asking for account numbers or anything specific.</div>
+      <div class="rebuttal-option">That's a great point — and honestly, if you'd rather just come in fresh and let AJ ask those questions directly on the call, that works too. I just want to make sure your time together is well spent. Should I go ahead and just get a time on the calendar?</div>
+      <div class="psychology-note">Don't push for information they're not comfortable sharing. Pivot to booking the meeting instead — a slightly less-qualified meeting is better than losing the prospect entirely. AJ can qualify them further on the call.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== BRENDAN TRAINING ==================== -->
+<div class="tab-content" id="tab-brendan-training">
+  <div class="section-title">Brendan's Complete Training Guide</div>
+  <div class="section-sub">Read this fully before your first call. Everything you need to make calls confidently — even with zero finance background.</div>
+
+  <div class="training-grid">
+    <div class="training-card">
+      <h4><span class="icon">🎯</span>Your ONE Job</h4>
+      <p>You are not a financial advisor. You are not a salesperson. You are a <strong>scheduler</strong>. Your entire job on every call is to get one outcome: qualify the prospect and book a meeting for AJ. That's it. Do not explain finance. Do not pitch investment strategies. Do not answer complex questions. Get the meeting on the calendar.</p>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">🗣️</span>How to Sound Confident</h4>
+      <ul>
+        <li><strong>Speak slowly.</strong> New callers talk too fast when nervous. Slow down by 20%.</li>
+        <li><strong>Smile when you talk.</strong> People can hear a smile — it changes your tone.</li>
+        <li><strong>Stand up when you call</strong> if possible. Your voice projects better standing.</li>
+        <li><strong>Don't apologize</strong> for calling. You're offering something valuable at no cost to them.</li>
+        <li><strong>Pause after asking a question.</strong> Let the silence work for you — don't fill it.</li>
+      </ul>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">❓</span>When They Ask Finance Questions</h4>
+      <p>If someone asks anything you don't know — investment types, tax strategies, specific numbers — do NOT try to answer. Say:</p>
+      <p style="margin-top:10px; background:#f0f9ff; padding:10px; border-radius:6px; font-style:italic;">"That's a great question — and that's exactly what AJ would be able to walk you through on the call. I'm just here to get you scheduled, but he'll be able to answer all of that."</p>
+      <p style="margin-top:8px;">This positions AJ as the expert and creates a clear reason for the meeting. Use it every time.</p>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">📞</span>Your Call Flow (Memorize This)</h4>
+      <ul>
+        <li><strong>1. Confirm name</strong></li>
+        <li><strong>2. Introduce yourself</strong> — name, on behalf of AJ, Barnum Financial Group</li>
+        <li><strong>3. State the reason</strong> — "regarding your recent job status change from [Company]"</li>
+        <li><strong>4. Permission ask</strong> — "I'll keep this super quick, okay?"</li>
+        <li><strong>5. One-sentence pitch</strong> — complimentary planning process, no cost, no obligation</li>
+        <li><strong>6. Ask for agreement</strong> — "Would you be open to that?"</li>
+        <li><strong>7. Qualify</strong> — "Before we book, let me jot a couple notes..." (Q1–Q6)</li>
+        <li><strong>8. Find pain</strong> — go through the 6 pillars</li>
+        <li><strong>9. Meeting overview</strong> — brief, don't go in the weeds</li>
+        <li><strong>10. Close on time preference</strong> — mornings/afternoons/evenings + days</li>
+        <li><strong>11. Confirm booking out loud</strong> — state date and time back to them</li>
+        <li><strong>12. Get email</strong> — send calendar invite immediately after</li>
+      </ul>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">⚡</span>Power Phrases to Use</h4>
+      <ul>
+        <li>"Complimentary — at no cost to you"</li>
+        <li>"Just a quick 15-minute phone call"</li>
+        <li>"No obligation, no pressure"</li>
+        <li>"AJ would love to connect with you personally"</li>
+        <li>"Before we put a date in the calendar, let me just jot a couple notes..."</li>
+        <li>"Do you prefer mornings, afternoons, or evenings?"</li>
+        <li>"I'm going to send over a calendar invitation with all of AJ's information"</li>
+        <li>"AJ will be able to answer all of that on the call"</li>
+      </ul>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">🚫</span>Things To NEVER Say or Do</h4>
+      <ul>
+        <li>Never say "it's free" — say "complimentary" or "at no cost to you"</li>
+        <li>Never say "I'm sorry to bother you"</li>
+        <li>Never say "whenever you're free" — always offer specific time options</li>
+        <li>Never discuss specific fees or investment products</li>
+        <li>Never try to explain financial strategies in detail</li>
+        <li>Never keep talking after they say yes — book it and close</li>
+        <li>Never argue if they're rude — gracefully exit and move on</li>
+        <li>Never end a call without a next step</li>
+      </ul>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">🧠</span>The Psychology of a Cold Call</h4>
+      <ul>
+        <li>The first 10 seconds decide if they keep listening — be warm and clear immediately</li>
+        <li>Stating the specific reason for your call (their job status change) is far more effective than being vague</li>
+        <li>The word "quick" lowers resistance — always say "quick 15 minutes"</li>
+        <li>Asking permission ("I'll keep this super quick, okay?") gets a micro-yes</li>
+        <li>People don't say no to you — they say no to uncertainty. Reduce uncertainty.</li>
+        <li>Silence after a question is your friend — don't fill it, let them answer</li>
+        <li>Your goal on the qualification questions is to make them feel heard, not interrogated</li>
+      </ul>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">📊</span>What AJ Does — In Simple Terms</h4>
+      <p>If someone asks what AJ does, say this:</p>
+      <p style="margin-top:8px; font-style:italic; background:#f0f9ff; padding:10px; border-radius:6px;">"He goes through your entire financial picture — investments, retirement savings, taxes, all of it — and gives you an honest assessment of where you stand and what you could be doing better. He uses the same professional tools that large institutions use, and the whole process is at no cost to you."</p>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">📋</span>The Qualification Questions — Why They Matter</h4>
+      <ul>
+        <li>They make AJ's first call much more focused and valuable</li>
+        <li>They help you uncover the pain point AJ should lead with</li>
+        <li>They filter out people who aren't actually a fit (e.g., happy with current advisor and not open to change)</li>
+        <li>They make the prospect feel heard before the meeting even happens</li>
+        <li>The 6-pillar question is where you find the real reason they'll say yes</li>
+      </ul>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">🔄</span>Handling Rejection — The Right Mindset</h4>
+      <ul>
+        <li>Every "no" is just practice for the next "yes"</li>
+        <li>A rejection is not personal — they're rejecting the timing or the situation, not you</li>
+        <li>Expect most calls to not book — that's completely normal</li>
+        <li>After a tough call: take 10 seconds, reset, then dial again. Don't carry it.</li>
+        <li>Keep a tally. Progress is motivating — track your calls and your bookings.</li>
+      </ul>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">📝</span>What to Log After Every Call</h4>
+      <ul>
+        <li>Name + phone number + best email</li>
+        <li>Company they came from</li>
+        <li>Result: Booked / Not interested / Call back / Voicemail / No answer</li>
+        <li>If calling back: specific date and time they said to call</li>
+        <li>Qualification notes: years at company, account ballpark, prior advisor status</li>
+        <li>Their pain point from the 6-pillar question</li>
+        <li>If booked: confirm email, send calendar invite immediately</li>
+      </ul>
+    </div>
+    <div class="training-card">
+      <h4><span class="icon">🎮</span>Practice Plan Before Your First Call</h4>
+      <ul>
+        <li>Read Script B1 fully — out loud — 10 times before your first real call</li>
+        <li>Memorize the Qualification Questions cold — they should feel natural</li>
+        <li>Have someone play the prospect and run through the role plays</li>
+        <li>Record yourself once — listen back for where you rush or stumble</li>
+        <li>Do a live practice run with AJ before going out on your own</li>
+        <li>Your first 20 calls are just practice. Don't judge yourself, just learn.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <div class="section-title" style="font-size:1.1rem; margin-bottom:12px;">Quick Vocabulary Guide</div>
+  <div class="section-sub">You'll hear these terms — here's what they mean in plain English. You don't need to explain these — just know enough not to be caught off guard.</div>
+
+  <div class="quick-ref">
+    <div class="qr-card">
+      <h5>Financial Plan</h5>
+      <p>A full picture of someone's money situation — what they have, what they owe, what they earn, and how they reach their goals. AJ builds this using professional software.</p>
+    </div>
+    <div class="qr-card">
+      <h5>eMoney</h5>
+      <p>Software AJ uses that shows someone's full financial picture and models out what happens if they do nothing vs. if they make changes. Like a GPS for money.</p>
+    </div>
+    <div class="qr-card">
+      <h5>Morningstar</h5>
+      <p>A professional tool that analyzes investments. Shows what someone owns, how it's performed, what risk they're taking, and how fees compare. Like an MRI for a portfolio.</p>
+    </div>
+    <div class="qr-card">
+      <h5>Portfolio X-Ray</h5>
+      <p>A Morningstar report that breaks down all of someone's accounts in one place — shows the full picture across everything they own.</p>
+    </div>
+    <div class="qr-card">
+      <h5>401(k) / Retirement Account</h5>
+      <p>A savings account through an employer where money grows for retirement. This is usually what they have at their old job that needs to be dealt with after a career change.</p>
+    </div>
+    <div class="qr-card">
+      <h5>Pre-tax vs. Roth</h5>
+      <p>Pre-tax means they get a tax break now but pay taxes later. Roth means they paid taxes already so withdrawals in retirement are tax-free. If they don't know which they have, AJ will figure it out.</p>
+    </div>
+    <div class="qr-card">
+      <h5>Balance Sheet</h5>
+      <p>A list of everything someone owns (house, savings, investments) vs. everything they owe (mortgage, debt). Like a snapshot of their full financial picture.</p>
+    </div>
+    <div class="qr-card">
+      <h5>Holistic Planning</h5>
+      <p>Looking at ALL of someone's finances together — investments, taxes, insurance, estate plans, retirement income — rather than just one piece of it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CHEAT SHEET ==================== -->
+<div class="tab-content" id="tab-cheatsheet">
+  <div class="section-title">⚡ Quick Cheat Sheet</div>
+  <div class="section-sub">Keep this open during calls. Everything critical at a glance.</div>
+
+  <div class="cheat-grid" style="margin-bottom:28px;">
+    <div class="cheat-card do">
+      <h5>✅ ALWAYS DO</h5>
+      <ul>
+        <li>State the reason for the call upfront — their job status change from [Company]</li>
+        <li>Ask permission: "I'll keep this super quick — okay?"</li>
+        <li>Use "complimentary" and "at no cost to you" — not "free"</li>
+        <li>Run the Qualification Questions before booking every time</li>
+        <li>Find their pain point through the 6 pillars</li>
+        <li>Close on time preference: "Mornings, afternoons, or evenings?"</li>
+        <li>State date and time back to them out loud when booking</li>
+        <li>Get email, send calendar invite immediately after</li>
+        <li>Pause after asking a question — let them answer</li>
+        <li>Always have a next step before hanging up</li>
+        <li>Log every call right after</li>
+      </ul>
+    </div>
+    <div class="cheat-card dont">
+      <h5>❌ NEVER DO</h5>
+      <ul>
+        <li>Say "free" — say "complimentary" or "at no cost to you"</li>
+        <li>Apologize for calling</li>
+        <li>Say "whenever you're free" — give specific day/time options</li>
+        <li>Oversell or over-explain on the first call</li>
+        <li>Keep talking after they say yes — book it and wrap up</li>
+        <li>Discuss specific fees or investment strategies [Brendan]</li>
+        <li>Trash their current advisor or brokerage</li>
+        <li>Argue with a firm objection — back out gracefully</li>
+        <li>End a call without a next step of some kind</li>
+        <li>Promise specific returns or outcomes</li>
+        <li>Skip the Qualification Framework before booking</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <div class="section-title" style="font-size:1.1rem; margin-bottom:16px;">Qualification Framework — At a Glance</div>
+  <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06); margin-bottom:28px;">
+    <thead>
+      <tr style="background:var(--purple);color:#fff;">
+        <th style="padding:14px 18px;text-align:left;font-size:.85rem;">#</th>
+        <th style="padding:14px 18px;text-align:left;font-size:.85rem;">Question</th>
+        <th style="padding:14px 18px;text-align:left;font-size:.85rem;">Why It Matters</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid var(--gray-border);">
+        <td style="padding:14px 18px;font-weight:700;color:var(--purple);">Q1</td>
+        <td style="padding:14px 18px;font-size:.88rem;">"How many years were you at [Company]?"</td>
+        <td style="padding:14px 18px;font-size:.88rem;">Builds rapport, signals tenure and likely account size</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-border);background:#fafbfd;">
+        <td style="padding:14px 18px;font-weight:700;color:var(--purple);">Q2</td>
+        <td style="padding:14px 18px;font-size:.88rem;">"Were you contributing to their retirement plan the whole time?"</td>
+        <td style="padding:14px 18px;font-size:.88rem;">Confirms a qualified account exists to review</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-border);">
+        <td style="padding:14px 18px;font-weight:700;color:var(--purple);">Q3</td>
+        <td style="padding:14px 18px;font-size:.88rem;">"Pre-tax or post-tax (Roth) contributions?"</td>
+        <td style="padding:14px 18px;font-size:.88rem;">Identifies a tax planning opportunity for AJ</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-border);background:#fafbfd;">
+        <td style="padding:14px 18px;font-weight:700;color:var(--purple);">Q4</td>
+        <td style="padding:14px 18px;font-size:.88rem;">"Ballpark — how much accrued in that account?"</td>
+        <td style="padding:14px 18px;font-size:.88rem;">Qualifies the asset base</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-border);">
+        <td style="padding:14px 18px;font-weight:700;color:var(--purple);">Q5</td>
+        <td style="padding:14px 18px;font-size:.88rem;">"First time going through financial planning or worked with advisor before?"</td>
+        <td style="padding:14px 18px;font-size:.88rem;">Critical gate — determines the path forward</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-border);background:#fafbfd;">
+        <td style="padding:14px 18px;font-weight:700;color:var(--purple);">Q6</td>
+        <td style="padding:14px 18px;font-size:.88rem;">If prior advisor: "Still working with them? Open to recommendations?"</td>
+        <td style="padding:14px 18px;font-size:.88rem;">If No → graceful exit. If Yes → continue to pain finding</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-border);">
+        <td style="padding:14px 18px;font-weight:700;color:var(--purple);">Pain</td>
+        <td style="padding:14px 18px;font-size:.88rem;">Walk through the 6 pillars — which area feels most pressing?</td>
+        <td style="padding:14px 18px;font-size:.88rem;">Finds the hook AJ will lead with in Meeting 1</td>
+      </tr>
+      <tr style="background:#fafbfd;">
+        <td style="padding:14px 18px;font-weight:700;color:var(--green);">✅</td>
+        <td style="padding:14px 18px;font-size:.88rem;">"Mornings, afternoons, or evenings? Any particular days?"</td>
+        <td style="padding:14px 18px;font-size:.88rem;">The close. Always end with time preference, not "when are you free?"</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr class="divider">
+  <div class="section-title" style="font-size:1.1rem; margin-bottom:16px;">The 6 Pillars — Quick Reference</div>
+  <div class="quick-ref" style="margin-bottom:28px;">
+    <div class="qr-card"><h5>🏖️ Retirement Planning</h5><p>When can they retire, how much income will they have, how long will it last, Social Security timing and strategy.</p></div>
+    <div class="qr-card"><h5>📈 Investment Strategies</h5><p>Active management with ongoing rebalancing and a passive protected-growth option. Organized into short, intermediate, and long-term buckets.</p></div>
+    <div class="qr-card"><h5>💰 Tax Strategies</h5><p>Roth conversions, tax-loss harvesting, retirement account sequencing, minimizing taxable events year over year.</p></div>
+    <div class="qr-card"><h5>🏛️ Estate & Legacy</h5><p>Beneficiary review, trust planning, wealth transfer to heirs, charitable giving strategies — making sure assets go exactly where intended.</p></div>
+    <div class="qr-card"><h5>🛡️ Protection Planning</h5><p>Life insurance, long-term care coverage, disability insurance — making sure the financial plan is protected if something unexpected happens.</p></div>
+    <div class="qr-card"><h5>💼 Wealth Management</h5><p>Coordinating all of the above into one cohesive plan. One advisor, full picture — nothing falling through the cracks.</p></div>
+  </div>
+
+  <div class="section-title" style="font-size:1.1rem; margin-bottom:16px;">Top 5 Objections — Quick Answers</div>
+  <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);">
+    <thead>
+      <tr style="background:var(--navy);color:#fff;">
+        <th style="padding:14px 18px;text-align:left;font-size:.85rem;">#</th>
+        <th style="padding:14px 18px;text-align:left;font-size:.85rem;">Objection</th>
+        <th style="padding:14px 18px;text-align:left;font-size:.85rem;">Quick Response</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid var(--gray-border);">
+        <td style="padding:14px 18px;font-weight:700;color:var(--orange);">1</td>
+        <td style="padding:14px 18px;font-size:.88rem;">"I have an advisor"</td>
+        <td style="padding:14px 18px;font-size:.88rem;">This is an independent second opinion, not a replacement. Are you open to investment recommendations?</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-border);background:#fafbfd;">
+        <td style="padding:14px 18px;font-weight:700;color:var(--orange);">2</td>
+        <td style="padding:14px 18px;font-size:.88rem;">"Not interested"</td>
+        <td style="padding:14px 18px;font-size:.88rem;">Is it the timing, or do you already have a solid plan in place? The review is at no cost — would it hurt to just see where you stand?</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-border);">
+        <td style="padding:14px 18px;font-weight:700;color:var(--orange);">3</td>
+        <td style="padding:14px 18px;font-size:.88rem;">"Send me something"</td>
+        <td style="padding:14px 18px;font-size:.88rem;">Absolutely — let me ask one quick question so what I send is actually relevant. And let's also pencil in a call so it's useful.</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-border);background:#fafbfd;">
+        <td style="padding:14px 18px;font-weight:700;color:var(--orange);">4</td>
+        <td style="padding:14px 18px;font-size:.88rem;">"What's the catch?"</td>
+        <td style="padding:14px 18px;font-size:.88rem;">No catch. The planning process is at no cost to you. The only way I make money is if you choose to work with me after seeing everything.</td>
+      </tr>
+      <tr>
+        <td style="padding:14px 18px;font-weight:700;color:var(--orange);">5</td>
+        <td style="padding:14px 18px;font-size:.88rem;">"Talk to my spouse"</td>
+        <td style="padding:14px 18px;font-size:.88rem;">Have them both on the call — it's actually better that way. Can we find a time where you're both available?</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+function showTab(name, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+function toggleScript(header) {
+  const body = header.nextElementSibling;
+  const icon = header.querySelector('.toggle-icon');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  header.classList.toggle('open', !isOpen);
+}
+
+function toggleRoleplay(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  const spans = header.querySelectorAll('span');
+  const arrow = spans[spans.length - 1];
+  arrow.textContent = isOpen ? '▼' : '▲';
+}
+
+function toggleAll(group, open) {
+  document.querySelectorAll('[data-group="' + group + '"]').forEach(card => {
+    const body = card.querySelector('.script-body, .roleplay-body');
+    const header = card.querySelector('.script-header, .roleplay-header');
+    if (body) body.classList.toggle('open', open);
+    if (header) {
+      const icon = header.querySelector('.toggle-icon');
+      if (icon) {
+        icon.style.transform = open ? 'rotate(180deg)' : '';
+        header.classList.toggle('open', open);
+      }
+      const spans = header.querySelectorAll('span');
+      const arrow = spans[spans.length - 1];
+      if (arrow && !icon) arrow.textContent = open ? '▲' : '▼';
+    }
+  });
+}
+</script>
+</body>
+</html>
